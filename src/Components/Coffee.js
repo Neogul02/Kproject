@@ -1,10 +1,7 @@
+import MenuList from "./MenuList";
 
-const Coffee = () => {
-  return (
-    <div>
-      <h1>Coffee</h1>
-    </div>
-  );
+function Coffee({ addToCart }) {
+  return <MenuList kind="coffee" addToCart={addToCart} />;
 }
 
 export default Coffee;
