@@ -20,7 +20,7 @@ const Cart = ({ inCart, removeFromCart }) => {
           {inCart.map((product, index) => (
             <div key={index}>
               <div>
-                <h3>{product.name}</h3>
+                <h3>{product.menu_name}</h3>
                 <h4>{product.price}원</h4>
               </div>
               <button onClick={() => handleRemove(index)}>삭제</button>
