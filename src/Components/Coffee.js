@@ -3,6 +3,7 @@ import MenuList from './MenuList';
 
 import Esspresso from '../img/CoffeeImg/Latte.jpg'
 import Americano from '../img/CoffeeImg/Latte.jpg'
+import Latte from '../img/CoffeeImg/Latte.jpg'
 
 function Coffee({ menus, addToCart }) {
 
@@ -10,12 +11,12 @@ function Coffee({ menus, addToCart }) {
   const Images = {
     에스프레소: Esspresso,
     아메리카노: Americano,
+    카페라떼: Latte,
     // ... 다른 커피 이미지들
   };
 
   return (
     <div>
-      <h2>Coffee</h2>
       <MenuList kind="coffee" Images={Images} menus={menus} addToCart={addToCart} />
     </div>
   );

@@ -11,7 +11,6 @@ function NonCoffee({ menus, addToCart }) {
 
   return (
     <div>
-      <h2>NonCoffee</h2>
       <MenuList kind="NON-coffee" Images={Images} menus={menus} addToCart={addToCart} />
     </div>
   );

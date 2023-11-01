@@ -11,8 +11,7 @@ function SIGNATURE({ menus, addToCart }) {
 
   return (
     <div>
-      <h2>TEA-tavalon</h2>
-      <MenuList kind="TEA-tavalon" Images={Images} menus={menus} addToCart={addToCart} />
+      <MenuList kind="SIGNATURE" Images={Images} menus={menus} addToCart={addToCart} />
     </div>
   );
 }

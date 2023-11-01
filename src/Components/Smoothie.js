@@ -12,7 +12,6 @@ function Smoothie({ menus, addToCart }) {
 
   return (
     <div>
-      <h2>Smoothie</h2>
       <MenuList kind="smoothie" Images={Images} menus={menus} addToCart={addToCart} />
     </div>
   );

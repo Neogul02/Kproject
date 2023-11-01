@@ -49,7 +49,7 @@ export default function App() {
       <nav className="navBar">
         <ul>
           <li className="homeLink">
-            <Link to="/">HOME</Link>
+            <Link to="/">HOME</Link> 
           </li>
           <li className="coffeeLink">
             <Link to="/Coffee">COFFEE</Link>
