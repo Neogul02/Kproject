@@ -1,8 +1,7 @@
 import React from 'react';
 import MenuList from './MenuList';
 
-function Smoothie({ menus, addToCart }) {
-
+function TEAtavalon({ menus, addToCart }) {
   // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장하는 객체
   const Images = {
     에스프감자레소: './drinkImg/Americano.jpg',
@@ -12,10 +11,10 @@ function Smoothie({ menus, addToCart }) {
 
   return (
     <div>
-      <h2>Smoothie</h2>
-      <MenuList kind="smoothie" Images={Images} menus={menus} addToCart={addToCart} />
+      <h2>TEA-tavalon</h2>
+      <MenuList kind="TEA-tavalon" Images={Images} menus={menus} addToCart={addToCart} />
     </div>
   );
 }
 
-export default Smoothie;
+export default TEAtavalon;

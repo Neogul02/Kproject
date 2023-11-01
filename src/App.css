@@ -1,19 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
 .App {
-  font-family: 'Arial', sans-serif;
+  
   background-color: #ffffff;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 세로 중앙 정렬 */
 }
 
 .title {
   font-size: 1.7rem;
   text-decoration: none;
   color: #333;
-  margin: 1.5rem;
+  margin: 1.5rem auto; /* 중앙 정렬을 위해 margin auto를 적용 */
   text-align: center;
   border-bottom: 5px solid #eee;
+  flex-grow: 1; /* flex item이 더 많은 공간을 차지하도록 함 */
 }
-
 .title:hover {
   color: #999;
 }
@@ -23,7 +34,8 @@
   color: #333;
   text-align: right;
   padding: 0 5rem 1rem 0;
-  border-bottom: 2px solid #eee;
+  cursor: pointer;
+  margin-left: auto;  /* Cart 링크를 오른쪽으로 정렬하기 위해 추가 */
 }
 /* nav bar */
 

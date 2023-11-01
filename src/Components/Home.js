@@ -1,8 +1,8 @@
 import React from 'react';
 import './homestyle.css';
 
-import img_1 from '../img/샬롬관.jpg';
-import img_2 from '../img/천은관.jpg';
+import img_1 from '../img/MainImg/샬롬관.jpg';
+import img_2 from '../img/MainImg/천은관.jpg';
 
 const Home = () =>{
   return (
