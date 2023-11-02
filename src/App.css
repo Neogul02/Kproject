@@ -1,68 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body{
-  font-family: 'Roboto', sans-serif;
-}
-.App {
-  
-  background-color: #ffffff;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
 }
 
 .title {
-  font-size: 1.7rem;
-  text-decoration: none;
+  font-size: 2rem;
   color: #333;
-  margin: 1.5rem auto; /* 중앙 정렬을 위해 margin auto를 적용 */
-  text-align: center;
-  border-bottom: 5px solid #eee;
-  flex-grow: 1; /* flex item이 더 많은 공간을 차지하도록 함 */
-}
-.title:hover {
-  color: #999;
-}
-
-.cartLink {
   text-decoration: none;
-  color: #333;
-  text-align: right;
-  padding: 0 5rem 1rem 0;
-  cursor: pointer;
-  margin-left: auto;  /* Cart 링크를 오른쪽으로 정렬하기 위해 추가 */
-}
-/* nav bar */
-
-nav.navBar {
-  background-color: #f9f9f9;
-  padding: 1rem 0;
 }
 
+/* Remove default list padding */
 nav.navBar ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 0;
+}
+
+/* Nav bar container */
+nav.navBar {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f9f9f9;
+
+}
+
+/* Nav bar list */
+nav.navBar ul {
+
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 nav.navBar li {
-  margin: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 nav.navBar a {
   text-decoration: none;
-  color: #000000;
-  transition: color 0.5s;
-  position: relative;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
 nav.navBar a:hover {
-  color: #949494;
+  color: #555;
+}
+
+.cartIcon {
+  font-size: 1.1rem;
+  
+}
+
+/* Responsive design for nav bar */
+@media (max-width: 768px) {
+  nav.navBar ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav.navBar li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Further responsive adjustments if needed */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
 }

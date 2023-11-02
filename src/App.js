@@ -30,6 +30,7 @@ export default function App() {
         console.error('Error fetching data:', error);
       });
   }, []);
+  console.log(allMenus) // < 임시
 
   const addToCart = (drink_product) => {
     setInCart([...inCart, drink_product]);
@@ -68,8 +69,7 @@ export default function App() {
           </li>
           <li className="cartLink">
             <Link to="/cart">
-
-              <i className="fa fa-shopping-cart cartIcon"></i>
+              <i className="fa fa-shopping-cart cartIcon"> CART</i>
             </Link>
           </li>
         </ul>

@@ -9,6 +9,7 @@ import MangoSmoothie from '../img/SmoothieImg/망고요거트스무디.jpg';
 import MilkShake from '../img/SmoothieImg/밀크셰이크.jpg';
 import CoffeeShake from '../img/SmoothieImg/커피셰이크.jpg';
 
+
 function Smoothie({ menus, addToCart }) {
   // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장하는 객체
   const Images = {
