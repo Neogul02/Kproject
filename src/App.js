@@ -19,7 +19,7 @@ export default function App() {
   const [allMenus, setAllMenus] = useState([]);
 
   useEffect(() => {
-    const apiURL = 'http://localhost:8080/kproject_api/get_menu.php';
+    const apiURL = 'http://localhost:8080/kproject_api/get_menus.php';
 
     axios
       .get(apiURL)
@@ -30,7 +30,7 @@ export default function App() {
         console.error('Error fetching data:', error);
       });
   }, []);
-  console.log(allMenus) // < 임시
+  console.log(allMenus); // < 임시
 
   const addToCart = (drink_product) => {
     setInCart([...inCart, drink_product]);
@@ -50,7 +50,7 @@ export default function App() {
       <nav className="navBar">
         <ul>
           <li className="homeLink">
-            <Link to="/">HOME</Link> 
+            <Link to="/">HOME</Link>
           </li>
           <li className="coffeeLink">
             <Link to="/Coffee">COFFEE</Link>
@@ -75,7 +75,7 @@ export default function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/cart" element={<Cart inCart={inCart} removeFromCart={removeFromCart} />} />
+        <Route path="/cart" element={<Cart inCart={inCart} />} />
         <Route index element={<Home />} />
 
         {/*kind에 해당하는 메뉴만 필터링 */}

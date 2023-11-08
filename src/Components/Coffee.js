@@ -22,9 +22,10 @@ function Coffee({ menus, addToCart }) {
     카라멜마끼아또: CaramelMacchiato,
     헤이즐넛라떼: HazelnutLatte,
     '콜드브루(디카페인)': Coldbrew,
-    샷추가 : addShot,
+    샷추가: addShot,
     // ... 다른 커피 이미지들
   };
+
   const handleAddToCart = (menu) => {
     const itemToAdd = {
       ...menu,

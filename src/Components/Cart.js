@@ -17,7 +17,7 @@ import MangoSmoothie from '../img/SmoothieImg/망고요거트스무디.jpg';
 import MilkShake from '../img/SmoothieImg/밀크셰이크.jpg';
 import CoffeeShake from '../img/SmoothieImg/커피셰이크.jpg';
 
-const Cart = ({ inCart: initialCart, removeFromCart }) => {
+const Cart = ({ inCart: initialCart }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const [inCart, setInCart] = useState(
@@ -60,9 +60,41 @@ const Cart = ({ inCart: initialCart, removeFromCart }) => {
     };
     console.log(JSON.stringify(cartData, null, 2));
     setInCart([]);
-    setPhoneNumber('');
-    alert('주문이 완료되었습니다.');
+    if (phoneNumber.length === 11) {
+      //11자리 00011112222 이면,
+      setPhoneNumber('');
+      alert('주문이 완료되었습니다.');
+    }
+    //수정한 부분 시작
+    fetch('http://localhost:8080/kproject_api/order.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((text) => {
+        console.log('Received text:', text);
+        window.location.replace('/');
+
+        if (!text) {
+          throw new Error('JSON is empty');
+        }
+
+        return JSON.parse(text);
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+        alert(`주문 처리 중 오류가 발생했습니다: ${error.message}`);
+      });
   };
+  //여기까지 수정했더욤
 
   const ButtonStyle = {
     fontSize: '1rem', // Adjust the font size as necessary
@@ -100,8 +132,9 @@ const Cart = ({ inCart: initialCart, removeFromCart }) => {
         <label>
           <span>전화번호: </span>
           <input
-            type="text"
+            type="tel"
             value={phoneNumber}
+            maxLength={11}
             onChange={(e) => setPhoneNumber(e.target.value)} // 사용자 입력에 따라 전화번호 업데이트
             placeholder="전화번호를 입력하세요"
           />
@@ -114,9 +147,9 @@ const Cart = ({ inCart: initialCart, removeFromCart }) => {
         <div>
           {inCart.map((product, index) => (
             <div key={index}>
-              <img src={menuImages[product.menu_name]} alt={product.menu_name} style={{ width: 100, height: 100 }} />
               <span>
-                <h3>{product.menu_name}</h3>
+                <img src={menuImages[product.menu_name]} alt={product.menu_name} style={{ width: 60, height: 60 }} />
+                <span>{product.menu_name}</span>
                 <span>
                   {product.price}원 [ {product.quantity || 1} ]
                 </span>
@@ -145,10 +178,9 @@ const Cart = ({ inCart: initialCart, removeFromCart }) => {
             </div>
           ))}
           <h2>총 금액: {totalPrice}원</h2>
-          <button style={ButtonStyle} onClick={handleOrder}>
+          <button style={ButtonStyle} onClick={phoneNumber.length === 11 ? handleOrder : null}>
             주문하기
-          </button>{' '}
-          {/* 주문하기 버튼 추가 */}
+          </button>
         </div>
       )}
     </div>
