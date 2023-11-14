@@ -3,16 +3,18 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 
 import Home from './Components/Home';
-import MenuList from './Components/MenuList';
 import Cart from './Components/Cart';
 
 import Coffee from './Components/Coffee';
-
-import './App.css';
 import Smoothie from './Components/Smoothie';
 import NonCoffee from './Components/NonCoffee';
 import TEAtavalon from './Components/TEAtavalon';
 import SIGNATURE from './Components/SIGNATURE';
+
+import './App.css';
+
+import Admin from './Components/Admin';
+import OrderList from './Components/OrderList';
 
 export default function App() {
   const [inCart, setInCart] = useState([]);
@@ -72,8 +74,12 @@ export default function App() {
               <i className="fa fa-shopping-cart cartIcon"> CART</i>
             </Link>
           </li>
+          <li className="AdminLink">
+            <Link to="/Admin">사장님페이지</Link>
+          </li>
         </ul>
       </nav>
+
       <Routes>
         <Route path="/cart" element={<Cart inCart={inCart} />} />
         <Route index element={<Home />} />
@@ -84,7 +90,12 @@ export default function App() {
         <Route path="/NonCoffee" element={<NonCoffee menus={allMenus.filter((menu) => menu.kind === 'NON-coffee')} addToCart={addToCart} />} />
         <Route path="/TEA-tavalon" element={<TEAtavalon menus={allMenus.filter((menu) => menu.kind === 'TEA-tavalon')} addToCart={addToCart} />} />
         <Route path="/SIGNATURE" element={<SIGNATURE menus={allMenus.filter((menu) => menu.kind === 'SIGNATURE')} addToCart={addToCart} />} />
+        <Route path="/Admin" element={<Admin />} />
+        <Route path="/Orderlist" element={<OrderList />} />
       </Routes>
+      <footer className="footer">
+        <div></div>
+      </footer>
     </BrowserRouter>
   );
 }

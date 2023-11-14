@@ -81,7 +81,7 @@ const Cart = ({ inCart: initialCart }) => {
       })
       .then((text) => {
         console.log('Received text:', text);
-        window.location.replace('/');
+        window.location.replace('/'); // 홈페이지로 돌아갑니다요 다 만들고 주석 풀기
 
         if (!text) {
           throw new Error('JSON is empty');
