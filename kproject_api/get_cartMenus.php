@@ -1,5 +1,7 @@
 <?php
 
+header("Access-Control-Allow-Origin: *"); // 모든 도메인에서 접근을 허용합니다.
+header("Content-Type: application/json; charset=UTF-8");
 
 $host = 'localhost';
 $db   = 'kproject';
@@ -13,9 +15,9 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 
-// 메뉴 데이터 가져오기 (GET 요청)
+// 카트 cart 데이터 가져오기 (GET 요청)
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $result = $connection->query("SELECT * FROM `menu` ORDER BY `kind` ASC");
+    $result = $connection->query("SELECT * FROM `cart` ORDER BY `id` ASC");
     $menus = array();
 
     while($row = $result->fetch_assoc()) {
