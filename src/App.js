@@ -38,10 +38,6 @@ export default function App() {
     setInCart([...inCart, drink_product]);
   };
 
-  const removeFromCart = (updatedCart) => {
-    setInCart(updatedCart);
-  };
-
   return (
     <BrowserRouter>
       <div className="container">

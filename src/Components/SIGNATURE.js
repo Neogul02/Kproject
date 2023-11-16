@@ -1,12 +1,15 @@
 import React from 'react';
 import MenuList from './MenuList';
 
+import 썸머펀치 from '../img/Signature/썸머펀치.jpg';
+import 베리더티 from '../img/Signature/베리더티.jpg';
+import 블룸즈버리라떼 from '../img/Signature/블룸즈버리라떼.jpg'
+
 function SIGNATURE({ menus, addToCart }) {
-  // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장하는 객체
   const Images = {
-    에스프감자레소: './drinkImg/Americano.jpg',
-    아메리카노: './drinkImg/Latte.jpg',
-    // ... 다른 커피 이미지들
+    썸머펀치 : 썸머펀치,
+    베리더티 : 베리더티,
+    블룸즈버리라떼 : 블룸즈버리라떼,
   };
 
   return (

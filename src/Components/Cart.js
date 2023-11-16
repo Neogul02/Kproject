@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
+// Coffee
 import Esspresso from '../img/CoffeeImg/에스프레소.jpg';
 import Americano from '../img/CoffeeImg/아메리카노.jpg';
 import Latte from '../img/CoffeeImg/카페라떼.jpg';
@@ -9,6 +10,8 @@ import CaramelMacchiato from '../img/CoffeeImg/카라멜마끼아또.jpg';
 import HazelnutLatte from '../img/CoffeeImg/헤이즐넛라떼.jpg';
 import Coldbrew from '../img/CoffeeImg/콜드브루.jpg';
 import addShot from '../img/CoffeeImg/샷추가.png';
+
+// Smoothie
 import ChocoSmoothie from '../img/SmoothieImg/초코스무디.jpg';
 import GreenteaSmoothie from '../img/SmoothieImg/녹차스무디.jpg';
 import PlainSmoothie from '../img/SmoothieImg/플레인스무디.jpg';
@@ -16,6 +19,29 @@ import StrawberrySmoothie from '../img/SmoothieImg/딸기요거트스무디.jpg'
 import MangoSmoothie from '../img/SmoothieImg/망고요거트스무디.jpg';
 import MilkShake from '../img/SmoothieImg/밀크셰이크.jpg';
 import CoffeeShake from '../img/SmoothieImg/커피셰이크.jpg';
+
+// NonCoffee
+import 그린티라떼 from '../img/NonCoffeeImg/그린티라떼.jpg';
+import 딸기라떼 from '../img/NonCoffeeImg/딸기라떼.png';
+import 딸기에이드 from '../img/NonCoffeeImg/딸기에이드.avif';
+import 레몬에이드 from '../img/NonCoffeeImg/레몬에이드.jpg';
+import 자몽에이드 from '../img/NonCoffeeImg/자몽에이드.jpg';
+import 패션후르츠에이드 from '../img/NonCoffeeImg/패션후르츠에이드.jpg';
+import 초코라떼 from '../img/NonCoffeeImg/초코라떼.jpg';
+import 복숭아아이스티 from '../img/NonCoffeeImg/복숭아아이스티.jpg';
+
+// TEA-tavalon
+import 쿨민트 from '../img/TeaImg/쿨민트.jpg';
+import 피치우롱티 from '../img/TeaImg/피치우롱티.jpg';
+import 망고멜랑 from '../img/TeaImg/망고멜랑.jpg';
+import 자스민펄 from '../img/TeaImg/자스민펄.jpg';
+import 밀크티 from '../img/TeaImg/밀크티.avif';
+import 스위트레몬그라스 from '../img/TeaImg/스위트레몬그라스.jpg';
+
+// signature
+import 썸머펀치 from '../img/Signature/썸머펀치.jpg';
+import 베리더티 from '../img/Signature/베리더티.jpg';
+import 블룸즈버리라떼 from '../img/Signature/블룸즈버리라떼.jpg';
 
 const Cart = ({ inCart: initialCart }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -115,6 +141,7 @@ const Cart = ({ inCart: initialCart }) => {
     헤이즐넛라떼: HazelnutLatte,
     '콜드브루(디카페인)': Coldbrew,
     샷추가: addShot,
+
     '초코 스무디': ChocoSmoothie,
     '녹차 스무디': GreenteaSmoothie,
     '플레인 요거트 스무디': PlainSmoothie,
@@ -122,7 +149,26 @@ const Cart = ({ inCart: initialCart }) => {
     '망고 요거트 스무디': MangoSmoothie,
     '밀크 셰이크': MilkShake,
     '커피 셰이크': CoffeeShake,
-    // ... 나머지 메뉴 이름과 이미지를 매핑
+
+    그린티라떼: 그린티라떼,
+    딸기라떼: 딸기라떼,
+    딸기에이드: 딸기에이드,
+    레몬에이드: 레몬에이드,
+    자몽에이드: 자몽에이드,
+    패션후르츠에이드: 패션후르츠에이드,
+    초코라떼: 초코라떼,
+    복숭아아이스티: 복숭아아이스티,
+
+    '쿨 민트': 쿨민트,
+    피치우롱: 피치우롱티,
+    망고멜랑: 망고멜랑,
+    '자스민 펄': 자스민펄,
+    밀크티: 밀크티,
+    '스위트 레몬그라스': 스위트레몬그라스,
+
+    썸머펀치: 썸머펀치,
+    베리더티: 베리더티,
+    블룸즈버리라떼: 블룸즈버리라떼,
   };
 
   return (
@@ -148,7 +194,7 @@ const Cart = ({ inCart: initialCart }) => {
           {inCart.map((product, index) => (
             <div key={index}>
               <span>
-                <img src={menuImages[product.menu_name]} alt={product.menu_name} style={{ width: 60, height: 60 }} />
+                <img src={menuImages[product.menu_name]} alt={product.menu_name} style={{ width: '100px', height: '100px' }} />
                 <span>{product.menu_name}</span>
                 <span>
                   {product.price}원 [ {product.quantity || 1} ]
