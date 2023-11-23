@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Cart.css';
 
 // Coffee
 import Esspresso from '../img/CoffeeImg/에스프레소.jpg';
@@ -122,15 +123,6 @@ const Cart = ({ inCart: initialCart }) => {
   };
   //여기까지 수정했더욤
 
-  const ButtonStyle = {
-    fontSize: '1rem', // Adjust the font size as necessary
-    padding: '0.5em', // Provide some padding around the text
-    margin: '0.5em',
-    background: 'none',
-    border: '1px solid #ccc', // Optional: add a border to make it look like a button
-    cursor: 'pointer',
-  };
-
   const menuImages = {
     에스프레소: Esspresso,
     아메리카노: Americano,
@@ -171,10 +163,20 @@ const Cart = ({ inCart: initialCart }) => {
     블룸즈버리라떼: 블룸즈버리라떼,
   };
 
+  const ButtonStyle = {
+    fontSize: '1rem', // Adjust the font size as necessary
+    padding: '0.5em', // Provide some padding around the text
+    margin: '0.5em',
+    background: 'none',
+    border: '1px solid #ccc', // Optional: add a border to make it look like a button
+    cursor: 'pointer',
+  };
+
   return (
-    <div>
+    <div class="cart">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <h1>장바구니</h1>
-      <div style={{ margin: '0.3rem' }}>
+      <div class="number" style={{ margin: '0.3rem' }}>
         <label>
           <span>전화번호: </span>
           <input
@@ -182,7 +184,7 @@ const Cart = ({ inCart: initialCart }) => {
             value={phoneNumber}
             maxLength={11}
             onChange={(e) => setPhoneNumber(e.target.value)} // 사용자 입력에 따라 전화번호 업데이트
-            placeholder="전화번호를 입력하세요"
+            placeholder="  전화번호를 입력하세요"
           />
         </label>
       </div>
@@ -190,43 +192,56 @@ const Cart = ({ inCart: initialCart }) => {
       {inCart.length === 0 ? (
         <p>장바구니가 비어있습니다.</p>
       ) : (
-        <div>
+        <div class="box">
           {inCart.map((product, index) => (
             <div key={index}>
-              <span>
-                <img src={menuImages[product.menu_name]} alt={product.menu_name} style={{ width: '100px', height: '100px' }} />
-                <span>{product.menu_name}</span>
-                <span>
-                  {product.price}원 [ {product.quantity || 1} ]
+              <span class="wrap">
+                <span class="img">
+                  <img src={menuImages[product.menu_name]} alt={product.menu_name} />
                 </span>
-                <span>
-                  <button style={ButtonStyle} onClick={() => handleQuantityChange(index, 1)}>
-                    +
-                  </button>
-                  <button style={ButtonStyle} onClick={() => handleQuantityChange(index, -1)}>
-                    -
-                  </button>
-                </span>
-                <span>
-                  <button
-                    style={{
-                      ...ButtonStyle,
-                      color: product.temperature === 'cold' ? 'blue' : 'red',
-                    }}
-                    onClick={() => toggleTemperature(index)}>
-                    {product.temperature.toUpperCase()}
-                  </button>
+                <span class="right">
+                  <span class="right-top">
+                    <span class="name">{product.menu_name}</span>
+                    <span class="tem">
+                      <button
+                        style={{
+                          ...ButtonStyle,
+                          color: product.temperature === 'cold' ? 'blue' : 'red',
+                        }}
+                        onClick={() => toggleTemperature(index)}>
+                        {product.temperature.toUpperCase()}
+                      </button>
+                    </span>
+                  </span>
+                  <span class="option">
+                    <span class="price">{product.price}원</span>
+                    <span>
+                      <span class="count">
+                        <button style={ButtonStyle} onClick={() => handleQuantityChange(index, 1)}>
+                          +
+                        </button>
+                        {product.quantity || 1}
+                        <button style={ButtonStyle} onClick={() => handleQuantityChange(index, -1)}>
+                          -
+                        </button>
+                      </span>
+                      <span class="deleteB">
+                        <button style={ButtonStyle} onClick={() => onDelete(index)}>
+                          삭제
+                        </button>
+                      </span>
+                    </span>
+                  </span>
                 </span>
               </span>
-              <button style={ButtonStyle} onClick={() => onDelete(index)}>
-                삭제
-              </button>
             </div>
           ))}
-          <h2>총 금액: {totalPrice}원</h2>
-          <button style={ButtonStyle} onClick={phoneNumber.length === 11 ? handleOrder : null}>
-            주문하기
-          </button>
+          <span class="footer">
+            <h2 class="t-price">총 금액: {totalPrice}원</h2>
+            <button style={ButtonStyle} onClick={phoneNumber.length === 11 ? handleOrder : null}>
+              주문하기
+            </button>
+          </span>
         </div>
       )}
     </div>
