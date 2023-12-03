@@ -13,8 +13,8 @@ function MenuList({ kind, menus, addToCart, Images }) {
   const menuListStyle = {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around', // Center alignment with space around each item
-    padding: '20px', // Increased space on both sides
+    justifyContent: 'space-around', 
+    padding: '20px', 
   };
 
   const menuItemStyle = {

@@ -5,6 +5,7 @@ import 썸머펀치 from '../img/Signature/썸머펀치.jpg';
 import 베리더티 from '../img/Signature/베리더티.jpg';
 import 블룸즈버리라떼 from '../img/Signature/블룸즈버리라떼.jpg'
 
+// signature
 function SIGNATURE({ menus, addToCart }) {
   const Images = {
     썸머펀치 : 썸머펀치,

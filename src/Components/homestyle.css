@@ -25,7 +25,6 @@ td, div {
   margin: auto;
 }
 
-/* 맵 컴포넌트를 감싸는 div에 대한 스타일 */
 div > .locationIcon + div {
   display: inline-block; /* div를 인라인 블록으로 만들어 줍니다. */
   vertical-align: middle; /* 세로 정렬을 중앙으로 맞춥니다. */

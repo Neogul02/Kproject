@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: DELETE"); // DELETE 메소드를 허용합니다.
+header("Access-Control-Allow-Methods: DELETE"); // DELETE 메소드 허용
 header("Content-Type: application/json; charset=UTF-8");
 
 $host = 'localhost';

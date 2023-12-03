@@ -12,7 +12,7 @@
         $user = 'root';
         $pass = '';
         
-        // 연결 생성
+        // 연결
         $mysqli = new mysqli($host, $user, $pass, $db);
         
         $select =  "select * from kproject.menu where id =' " . $_GET["id"] . " ' ";

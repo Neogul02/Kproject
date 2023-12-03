@@ -9,6 +9,7 @@ import img_3 from '../img/MainImg/clockIcon.jpg';
 import img_4 from '../img/MainImg/phoneIcon.jpg';
 import img_5 from '../img/MainImg/채점자.jpg';
 
+// 메인화면
 const Home = () => {
   return (
     <div>

@@ -88,7 +88,7 @@ const Cart = ({ inCart: initialCart }) => {
     console.log(JSON.stringify(cartData, null, 2));
     setInCart([]);
     if (phoneNumber.length === 11) {
-      //11자리 00011112222 이면,
+      //11자리 00011112222
       setPhoneNumber('');
       alert('주문이 완료되었습니다.');
     }

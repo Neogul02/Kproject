@@ -8,6 +8,7 @@ import 자스민펄 from '../img/TeaImg/자스민펄.jpg';
 import 밀크티 from '../img/TeaImg/밀크티.avif';
 import 스위트레몬그라스 from '../img/TeaImg/스위트레몬그라스.jpg';
 
+// TEA-tavalon
 function TEAtavalon({ menus, addToCart }) {
   // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장하는 객체
   const Images = {

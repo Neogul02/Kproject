@@ -21,7 +21,7 @@ $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
 try {
-    // 트랜잭션 시작
+    // 트랜잭션
     $connection->begin_transaction();
 
     // cart 테이블에 데이터를 저장하는 쿼리 준비

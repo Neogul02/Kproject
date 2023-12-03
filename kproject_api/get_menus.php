@@ -13,7 +13,7 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 
-// 메뉴 데이터 가져오기 (GET 요청)
+// 메뉴 DB 가져오기 (GET 요청)
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $result = $connection->query("SELECT * FROM `menu` ORDER BY `kind` ASC");
     $menus = array();

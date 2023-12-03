@@ -12,7 +12,7 @@ import Coldbrew from '../img/CoffeeImg/콜드브루.jpg';
 import addShot from '../img/CoffeeImg/샷추가.png';
 
 function Coffee({ menus, addToCart }) {
-  // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장하는 객체
+  // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장
   const Images = {
     에스프레소: Esspresso,
     아메리카노: Americano,

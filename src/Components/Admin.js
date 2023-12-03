@@ -6,7 +6,7 @@ const OrderListPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    // 비밀번호가 '0000'인 경우에만 로그인 처리
+    // 비밀번호가 '0000'인 경우에만 로그인
     if (password === '0000') {
       setIsLoggedIn(true);
     } else {

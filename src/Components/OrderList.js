@@ -9,7 +9,7 @@ const Admin = () => {
     const fetchCartData = async () => {
       try {
         const response = await axios.get('http://localhost:8080/kproject_api/get_cartMenus.php');
-        // 전화번호를 기준으로 주문을 그룹화
+        // 전화번호를 기준으로 주문을 그룹
         const groupedOrders = groupOrdersByPhoneNumber(response.data);
         setCartData(groupedOrders);
       } catch (error) {

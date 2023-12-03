@@ -1,6 +1,6 @@
 <?php
 
-header("Access-Control-Allow-Origin: *"); // 모든 도메인에서 접근을 허용합니다.
+header("Access-Control-Allow-Origin: *"); // 모든 도메인에서 접근을 허용
 header("Content-Type: application/json; charset=UTF-8");
 
 $host = 'localhost';

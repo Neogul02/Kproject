@@ -11,7 +11,7 @@
         $db   = 'kproject';
         $user = 'root';
         $pass = '';
-        // 연결 생성
+        // 연결
         $mysqli = new mysqli($host, $user, $pass, $db);
     ?>
     <h1>블룸즈버리</h1>

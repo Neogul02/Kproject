@@ -11,7 +11,7 @@ import 초코라떼 from '../img/NonCoffeeImg/초코라떼.jpg';
 import 복숭아아이스티 from '../img/NonCoffeeImg/복숭아아이스티.jpg';
 
 function NonCoffee({ menus, addToCart }) {
-  // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장하는 객체
+  // 예시로 각 메뉴 아이템에 해당하는 이미지 URL을 저장
   const Images = {
     그린티라떼: 그린티라떼,
     딸기라떼 : 딸기라떼,

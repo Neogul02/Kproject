@@ -32,7 +32,7 @@ export default function App() {
         console.error('Error fetching data:', error);
       });
   }, []);
-  console.log(allMenus); // < 임시
+  console.log(allMenus);
 
   const addToCart = (drink_product) => {
     setInCart([...inCart, drink_product]);
